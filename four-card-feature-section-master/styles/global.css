@@ -1,0 +1,183 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --red-color: hsl(0, 78%, 62%);
+  --cyan-color: hsl(180, 62%, 55%);
+  --orange-color: hsl(34, 97%, 64%);
+  --blue-color: hsl(212, 86%, 64%);
+  --white-color: hsl(0, 0%, 100%);
+
+  --neutral-grey-500: hsl(234, 12%, 34%);
+  --neutral-grey-400: hsl(212, 6%, 44%);
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: #f9fafa;
+  color: #2c2e3a;
+}
+
+.technology-section {
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.heading {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: var(--neutral-grey-500);
+}
+
+.heading h2 {
+  font-weight: 400;
+  font-size: 1.5rem;
+}
+
+.heading h1 {
+  font-weight: 700;
+  font-size: 1.5rem;
+  margin: 0.5rem 0;
+}
+
+.heading p {
+  font-size: 0.95rem;
+  color: var(--neutral-grey-400);
+  max-width: 100%;
+  margin: 0.5rem auto 2rem;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  justify-items: center;
+}
+
+.card {
+  background: var(--white-color);
+  border-radius: 10px;
+  padding: 2rem 1rem;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+  position: relative;
+  transition: transform 0.3s;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 1rem;
+  align-items: flex-start;
+  height: auto;
+  width: 100%;
+}
+
+.card-icon {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.top-border {
+  border-top: 5px solid;
+}
+
+.teal {
+  border-color: var(--cyan-color);
+}
+
+.red {
+  border-color: var(--red-color);
+}
+
+.blue {
+  border-color:var(--blue-color);
+}
+
+.orange {
+  border-color: var(--orange-color);
+}
+
+.center,
+.bottom {
+  grid-column: auto;
+}
+
+footer.attribution {
+  text-align: center;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  font-size: 0.8rem;
+  color: var(--neutral-grey-400);
+}
+
+footer.attribution a {
+  color: var(--neutral-grey-500);
+  text-decoration: none;
+  transition: all 0.3s ease-in-out;
+  display: inline-block;
+}
+
+footer.attribution a:hover {
+  text-decoration: underline;
+  text-decoration-color: var(--neutral-grey-500);
+  text-underline-offset: 0.2rem;
+  text-decoration-thickness: 0.1rem;
+  transform: scale(1.05) rotate(0.2deg);
+}
+
+/* Desktop Enhancements */
+@media (min-width: 768px) {
+  .technology-section {
+    padding: 3rem 6rem;
+  }
+
+  .heading h2 {
+    font-size: 2rem;
+  }
+
+  .heading h1 {
+    font-size: 2rem;
+  }
+
+  .heading p {
+    max-width: 500px;
+  }
+
+  .cards {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    grid-template-rows: auto auto;
+  }
+
+  .card {
+    height: 280px;
+    padding: 2.5rem 1.5rem;
+  }
+
+  .center {
+    grid-column: 2;
+  }
+  .bottom {
+    grid-column: 2;
+  }
+
+  .first, .last {
+    grid-row: span 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
