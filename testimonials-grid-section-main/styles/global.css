@@ -1,0 +1,159 @@
+@import url("https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --primary-purple-50: hsl(260, 100%, 95%);
+  --primary-purple-300: hsl(264, 82%, 80%);
+  --primary-purple-500: hsl(263, 55%, 52%);
+
+  --white: hsl(0, 0%, 100%);
+  --grey-100: hsl(214, 17%, 92%);
+  --grey-200: hsl(0, 0%, 81%);
+  --grey-400: hsl(224, 10%, 45%);
+  --grey-500: hsl(217, 19%, 35%);
+  --darkblue: hsl(219, 29%, 14%);
+  --black: hsl(0, 0%, 7%);
+}
+
+body {
+  font-family: "Barlow Semi Condensed", sans-serif;
+  background-color: var(--primary-purple-50);
+  color: var(--black);
+  line-height: 1.5;
+  font-size: 16px;
+  min-height: 100vh;
+  padding: 5rem 2rem;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.card {
+  background-color: white;
+  padding: 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  height: 100%;
+}
+.card__image {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 1rem;
+}
+.card--purple {
+  background-color: var(--primary-purple-500);
+  color: var(--white);
+}
+
+.card--dark {
+  background-color: var(--darkblue);
+  color: var(--white);
+}
+
+.card--grey {
+  background-color: var(--grey-100);
+  color: var(--black);
+}
+
+.card--white {
+  background-color: var(--white);
+  color: var(--black);
+}
+
+/* Text-specific overrides */
+.card--purple .card__status,
+.card--dark .card__status {
+  color: var(--primary-purple-300); /* subtle lighter text */
+}
+
+.card--purple .card__quote,
+.card--dark .card__quote {
+  color: var(--grey-100); /* more readable for quotes */
+}
+
+.card--white .card__quote,
+.card--grey .card__quote {
+  color: var(--grey-500);
+}
+
+.card--white .card__status,
+.card--grey .card__status {
+  color: var(--grey-400);
+}
+
+.card__content h2 {
+  font-size: 1.1rem;
+  margin-bottom: 0.3rem;
+}
+
+.card__status {
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+  display: block;
+}
+
+.card__title {
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.card__quote {
+  font-weight: 500;
+  font-size: 0.95rem;
+}
+
+footer.attribution a {
+  margin-top: 1rem;
+  color: var(--primary-purple-500);
+  text-decoration: none;
+  transition: all 0.3s ease-in-out;
+  display: inline-block;
+}
+
+@media (min-width: 768px) {
+  .cards {
+    grid-template-columns: repeat(2, 1fr); /* 2 columns on tablets */
+  }
+}
+
+@media (min-width: 1024px) {
+  body {
+    padding: 10rem;
+  }
+  footer.attribution a:hover {
+    text-decoration: underline;
+    text-decoration-color: var(--primary-purple-500);
+    text-underline-offset: 0.2rem;
+    text-decoration-thickness: 0.1rem;
+    transition: all 0.3s ease-in-out;
+    transform: scale(1.05) rotate(0.2deg);
+  }
+
+  .cards {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  .card-0, .card-3{
+    grid-column: span 2;
+  }
+  .card-4 {
+    grid-row: 1 / span 2; 
+    grid-column: 4;
+  }
+
+  .card:hover {
+    transform: translateY(-5px);
+  }
+}
