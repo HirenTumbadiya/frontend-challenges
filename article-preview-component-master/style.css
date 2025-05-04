@@ -1,0 +1,192 @@
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Manrope", sans-serif;
+  background-color: hsl(210, 46%, 95%);
+  padding: 2rem;
+  min-height: 100vh;
+}
+
+.main {
+  padding: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 80vh;
+}
+
+.card {
+  background-color: white;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  max-width: 375px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.card__image {
+  background: url("./images/drawers.jpg") no-repeat center/cover;
+  height: 200px;
+  width: 100%;
+}
+
+.card__title {
+  font-size: 1rem;
+  font-weight: 700;
+  color: hsl(217, 19%, 35%);
+  margin-bottom: 1rem;
+  padding: 1.5rem 1.5rem 0 1.5rem;
+}
+
+.card__description {
+  font-size: 0.875rem;
+  color: hsl(212, 23%, 69%);
+  margin-bottom: 1.5rem;
+  padding: 0 1.5rem 1.5rem 1.5rem;
+}
+
+.card__footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  padding: 1rem;
+  min-height: 80px;
+}
+
+.author {
+  display: flex;
+  align-items: center;
+}
+
+.author__image {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 1rem;
+}
+
+.author__name {
+  font-weight: 700;
+  color: hsl(217, 19%, 35%);
+}
+
+.author__date {
+  font-size: 0.75rem;
+  color: hsl(212, 23%, 69%);
+}
+
+.share-button {
+  background-color: hsl(210, 46%, 95%);
+  border: none;
+  border-radius: 50%;
+  padding: 0.5rem;
+  cursor: pointer;
+}
+
+.share-tooltip {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  color: white;
+}
+
+.share-tooltip.hidden {
+  display: none;
+}
+
+footer.attribution a {
+  margin-top: 1rem;
+  color: var(--primary-purple-500);
+  text-decoration: none;
+  transition: all 0.3s ease-in-out;
+  display: inline-block;
+}
+
+/* Desktop styles */
+@media (min-width: 768px) {
+  .card {
+    display: flex;
+    flex-direction: row;
+    max-width: 800px;
+  }
+
+  .card__image {
+    width: 50%;
+    height: auto;
+  }
+
+  .card__content {
+    width: 50%;
+    padding: 2rem;
+  }
+
+  .share-tooltip {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    background-color: hsl(217, 19%, 35%);
+    color: white;
+    padding: 0.75rem 1rem;
+    border-radius: 0.5rem;
+    position: absolute;
+    bottom: 100%;
+    right: 1rem;
+    transform: translateY(-0.5rem);
+  }
+
+  .share-tooltip::after {
+    content: "";
+    position: absolute;
+    bottom: -10px;
+    right: 20px;
+    border-width: 6px;
+    border-style: solid;
+    border-color: hsl(217, 19%, 35%) transparent transparent transparent;
+  }
+
+  footer.attribution a:hover {
+    text-decoration: underline;
+    text-decoration-color: var(--primary-purple-500);
+    text-underline-offset: 0.2rem;
+    text-decoration-thickness: 0.1rem;
+    transition: all 0.3s ease-in-out;
+    transform: scale(1.05) rotate(0.2deg);
+  }
+}
+
+/* Mobile-specific tweaks */
+@media (max-width: 480px) {
+  .card__title {
+    font-size: 1rem;
+  }
+
+  .card__description {
+    font-size: 0.8rem;
+  }
+
+  .author__date {
+    font-size: 0.7rem;
+  }
+
+  .share-tooltip {
+    display: flex;
+    align-items: center;
+  }
+
+  .main {
+    padding: 1rem;
+  }
+
+  .card__footer.hidden {
+    background-color: hsl(217, 19%, 35%);
+  }
+
+  .author.hidden {
+    display: none;
+  }
+}
